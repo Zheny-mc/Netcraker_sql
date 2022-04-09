@@ -1,0 +1,31 @@
+--DROP TABLE IF EXISTS public.astronauts;
+
+CREATE TABLE IF NOT EXISTS public.astronauts
+(
+    gender "char",
+    ages numeric,
+    millitary bigint,
+    cname character varying(255) COLLATE pg_catalog."default" NOT NULL
+)
+/*----------------------------------------------------------------------------------------------------------*/
+INSERT INTO public.astronauts(cname, gender, ages, millitary)
+	VALUES  ('Aizer', 'm', 23, 1),
+		('Bartlet', 'm', 45, 0),
+		('Brooks', 'f', 43, 1),
+		('Colbeck', 'm', 34, 1),
+		('Elwes', 'f', 51, 0),
+		('Gedye', 'm', 22, 0),
+		('Hanchett', 'f', 28, 0);
+/*----------------------------------------------------------------------------------------------------------*/
+SELECT t1.cname name1, t1.ages, t1.gender,
+       t2.cname name2, t2.ages, t2.gender,
+       t3.cname name3, t3.ages, t3.gender
+FROM astronauts t1
+JOIN astronauts t2 ON t2.cname NOT IN (t1.cname) 
+JOIN astronauts t3 ON t3.cname NOT IN (t1.cname, t2.cname)
+WHERE (t1.millitary = 1 AND t3.millitary = 0)
+	AND ( ( (t1.gender = 'f' AND t1.ages > t2.ages AND t1.ages > t3.ages) AND t2.gender = 'm' AND t3.gender = 'm') 
+		  OR (t1.gender = 'm' AND t2.gender = 'f' AND t3.gender = 'm') 
+		  OR (t1.gender = 'm' AND t2.gender = 'm' AND t3.gender = 'f')
+		  OR (t1.gender = 'm' AND t2.gender = 'm' AND t3.gender = 'm') 
+	AND ( t1.ages < 35 OR t2.ages < 35 OR t3.ages < 35));
