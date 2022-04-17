@@ -1,5 +1,5 @@
 --DROP TABLE IF EXISTS public.astronauts;
-
+/*----------------------------------------------------------------------------------------------------------*/
 CREATE TABLE IF NOT EXISTS public.astronauts
 (
     gender "char",
@@ -29,3 +29,39 @@ WHERE (t1.millitary = 1 AND t3.millitary = 0)
 		  OR (t1.gender = 'm' AND t2.gender = 'm' AND t3.gender = 'f')
 		  OR (t1.gender = 'm' AND t2.gender = 'm' AND t3.gender = 'm') 
 	AND ( t1.ages < 35 OR t2.ages < 35 OR t3.ages < 35));
+/*----------------------------------------------------------------------------------------------------------*/
+"name1","ages","gender","name2","ages-2","gender-2","name3","ages-3","gender-3"
+"Aizer",23,"m","Brooks",43,"f","Bartlet",45,"m"
+"Aizer",23,"m","Colbeck",34,"m","Bartlet",45,"m"
+"Aizer",23,"m","Elwes",51,"f","Bartlet",45,"m"
+"Aizer",23,"m","Gedye",22,"m","Bartlet",45,"m"
+"Aizer",23,"m","Hanchett",28,"f","Bartlet",45,"m"
+"Aizer",23,"m","Bartlet",45,"m","Elwes",51,"f"
+"Aizer",23,"m","Colbeck",34,"m","Elwes",51,"f"
+"Aizer",23,"m","Gedye",22,"m","Elwes",51,"f"
+"Aizer",23,"m","Bartlet",45,"m","Gedye",22,"m"
+"Aizer",23,"m","Brooks",43,"f","Gedye",22,"m"
+"Aizer",23,"m","Colbeck",34,"m","Gedye",22,"m"
+"Aizer",23,"m","Elwes",51,"f","Gedye",22,"m"
+"Aizer",23,"m","Hanchett",28,"f","Gedye",22,"m"
+"Aizer",23,"m","Bartlet",45,"m","Hanchett",28,"f"
+"Aizer",23,"m","Colbeck",34,"m","Hanchett",28,"f"
+"Aizer",23,"m","Gedye",22,"m","Hanchett",28,"f"
+"Brooks",43,"f","Aizer",23,"m","Gedye",22,"m"
+"Brooks",43,"f","Colbeck",34,"m","Gedye",22,"m"
+"Colbeck",34,"m","Aizer",23,"m","Bartlet",45,"m"
+"Colbeck",34,"m","Brooks",43,"f","Bartlet",45,"m"
+"Colbeck",34,"m","Elwes",51,"f","Bartlet",45,"m"
+"Colbeck",34,"m","Gedye",22,"m","Bartlet",45,"m"
+"Colbeck",34,"m","Hanchett",28,"f","Bartlet",45,"m"
+"Colbeck",34,"m","Aizer",23,"m","Elwes",51,"f"
+"Colbeck",34,"m","Bartlet",45,"m","Elwes",51,"f"
+"Colbeck",34,"m","Gedye",22,"m","Elwes",51,"f"
+"Colbeck",34,"m","Aizer",23,"m","Gedye",22,"m"
+"Colbeck",34,"m","Bartlet",45,"m","Gedye",22,"m"
+"Colbeck",34,"m","Brooks",43,"f","Gedye",22,"m"
+"Colbeck",34,"m","Elwes",51,"f","Gedye",22,"m"
+"Colbeck",34,"m","Hanchett",28,"f","Gedye",22,"m"
+"Colbeck",34,"m","Aizer",23,"m","Hanchett",28,"f"
+"Colbeck",34,"m","Bartlet",45,"m","Hanchett",28,"f"
+"Colbeck",34,"m","Gedye",22,"m","Hanchett",28,"f"
